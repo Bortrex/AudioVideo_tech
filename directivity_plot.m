@@ -35,5 +35,6 @@ else
           direc = direc + exp(1i*2*pi*j*D_mic*fc*(cos(phir)-cos_v)/c);
     end
 end
-    
+
  polarplot(phir,abs(direc))
+ title('Azimuth Cut (elevation angle = 0.0°)')
