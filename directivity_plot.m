@@ -1,11 +1,19 @@
-function []=directivity_plot(N_mic,D_mic,fc,angSteer,c)
+function []=directivity_plot(N_mic,D_mic,fc,angSteer,c, varargin)
 
 % This function plots the directivity diagram of a discrete linear microphone array
 % N_mic: number of microphone
 % D_mic: distance between microphones
 % fc: operating frequeny or frequencies
 % angSteer: desired angle
+% varargin: extra parameters for the polar plot; by default just color='b'
 % Example: beamforming_directivity_plot(16,0.07,800,60,340)
+
+
+% adding color
+if isempty(varargin)
+    varargin = {'b'};
+end
+
 
 % Angles in degress
 phi = 0:0.5:359;
@@ -36,5 +44,5 @@ else
     end
 end
 
- polarplot(phir,abs(direc))
+ polarplot(phir,abs(direc), varargin{:} )
  title('Azimuth Cut (elevation angle = 0.0°)')
