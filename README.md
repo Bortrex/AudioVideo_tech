@@ -1,4 +1,4 @@
-# AudioVideo_tech
+# Audio & Video Tecniques - Project
 
 Please, copy your audio files:
 - Calibration 1 kHz
